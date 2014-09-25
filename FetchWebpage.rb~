@@ -1,0 +1,9 @@
+require 'nokogiri'
+require 'open-uri'
+
+
+page="http://www.cis.upenn.edu/~swapneel/test.html"
+
+doc=Nokogiri::HTML(open(page))
+
+File.open("page#{Time.now.getutc}.out", 'w'){|file| file.write(doc)}
